@@ -77,6 +77,9 @@ def detecMovent(currentPos):
 
         granpaPos = currentPos[5]
 
+        if newNode[4] > 0:
+            newNode[4] = newNode[4] -1
+
         if totalmovements[granpaPos][1] != newNode[1] or totalmovements[granpaPos][2] != newNode[2] or totalmovements[granpaPos][3] != newNode[3] or totalmovements[granpaPos][4] != newNode[4]:
             movements.append(newNode)
         
@@ -114,6 +117,9 @@ def detecMovent(currentPos):
         newNode[5] = fatherPos
 
         granpaPos = currentPos[5]
+
+        if newNode[4] > 0:
+            newNode[4] = newNode[4] -1
 
         if totalmovements[granpaPos][1] != newNode[1] or totalmovements[granpaPos][2] != newNode[2] or totalmovements[granpaPos][3] != newNode[3] or totalmovements[granpaPos][4] != newNode[4]:
             movements.append(newNode)
@@ -153,6 +159,9 @@ def detecMovent(currentPos):
 
         granpaPos = currentPos[5]
 
+        if newNode[4] > 0:
+            newNode[4] = newNode[4] -1
+
         if totalmovements[granpaPos][1] != newNode[1] or totalmovements[granpaPos][2] != newNode[2] or totalmovements[granpaPos][3] != newNode[3] or totalmovements[granpaPos][4] != newNode[4]:
             movements.append(newNode)
 
@@ -189,6 +198,9 @@ def detecMovent(currentPos):
         newNode[5] = fatherPos
 
         granpaPos = currentPos[5]
+
+        if newNode[4] > 0:
+            newNode[4] = newNode[4] -1
 
         if totalmovements[granpaPos][1] != newNode[1] or totalmovements[granpaPos][2] != newNode[2] or totalmovements[granpaPos][3] != newNode[3] or totalmovements[granpaPos][4] != newNode[4]:
             movements.append(newNode)

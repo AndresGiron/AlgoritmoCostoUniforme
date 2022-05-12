@@ -63,7 +63,10 @@ def detecMovent(currentPos):
             if currentPos[3] != [[y+1,x]]:
                 newNode[3].insert(0,[y+1,x])
         if maze[y+1][x] == "6":
-            newNode[0] = newNode[0] + 4
+            if newNode[4] > 0:
+                newNode[0] = newNode[0] + 1
+            else:
+                newNode[0] = newNode[0] + 4
             newNode[1] = newNode[1] + 1
 
 
@@ -81,8 +84,6 @@ def detecMovent(currentPos):
     #mirar hacia la izquierda
     if x-1 >= 0 and maze[y][x-1] != "1":
         newNode = list(currentPos)
-        fatherPos = len(totalmovements) - 1
-        newNode[5] = fatherPos
         if maze[y][x-1] == "0" or maze[y][x-1] == "2":
             newNode[0] = newNode[0] + 1
             newNode[2] = newNode[2] - 1
@@ -101,7 +102,10 @@ def detecMovent(currentPos):
             if currentPos[3] != [[y,x-1]]:
                 newNode[3].insert(0,[y,x-1])
         if maze[y][x-1] == "6":
-            newNode[0] = newNode[0] + 4
+            if newNode[4] > 0:
+                newNode[0] = newNode[0] + 1
+            else:
+                newNode[0] = newNode[0] + 4
             newNode[2] = newNode[2] - 1
 
 
@@ -118,8 +122,6 @@ def detecMovent(currentPos):
     #mirar hacia arriba
     if y-1 >= 0 and maze[y-1][x] != "1":
         newNode = list(currentPos)
-        fatherPos = len(totalmovements) - 1
-        newNode[5] = fatherPos
         if maze[y-1][x] == "0" or maze[y-1][x] == "2":
             newNode[0] = newNode[0] + 1
             newNode[1] = newNode[1] - 1
@@ -138,7 +140,10 @@ def detecMovent(currentPos):
             if currentPos[3] != [[y-1,x]]:
                 newNode[3].insert(0,[y-1,x])
         if maze[y-1][x] == "6":
-            newNode[0] = newNode[0] + 4
+            if newNode[4] > 0:
+                newNode[0] = newNode[0] + 1
+            else:
+                newNode[0] = newNode[0] + 4
             newNode[1] = newNode[1] - 1
         
 
@@ -155,8 +160,6 @@ def detecMovent(currentPos):
     #mirar hacia la derecha
     if x+1 <= 9 and maze[y][x+1] != "1":
         newNode = list(currentPos)
-        fatherPos = len(totalmovements) - 1
-        newNode[5] = fatherPos
         if maze[y][x+1] == "0" or maze[y][x+1] == "2":
             newNode[0] = newNode[0] + 1
             newNode[2] = newNode[2] + 1
@@ -175,7 +178,10 @@ def detecMovent(currentPos):
             if currentPos[3] != [[y,x+1]]:
                 newNode[3].insert(0,[y,x+1])
         if maze[y][x+1] == "6":
-            newNode[0] = newNode[0] + 4
+            if newNode[4]> 0:
+                newNode[0] = newNode[0] + 1
+            else:
+                newNode[0] = newNode[0] + 4
             newNode[2] = newNode[2] + 1
     
         #La posicion del padre es el ultimo indice de la lista totalmovements
